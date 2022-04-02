@@ -179,6 +179,11 @@ a {
     grid-area: arte;
 }
 
+.arte::first-letter {
+    color: var(--secondary);
+    font-size: 1.5em;
+}
+
 .bienvenidos {
     grid-area: bienvenidos;
     color: black;
@@ -187,8 +192,12 @@ a {
     animation-timing-function: ease-in-out;
     animation-duration: 3s;
     animation-delay: 3s;
+    gap: 2rem;
 }
 
+.bienvenidos::after {
+    content: "📸";
+}
 
 .img {
     grid-area: img;
@@ -329,6 +338,12 @@ h2 {
     animation-duration: 4s;
     animation-delay: 2s;
 }
+form input {
+    margin: 0.3rem;
+}
+form input:focus {
+    outline: 2px solid var(--secondary);
+}
 
 /* Helpers */
 
@@ -350,6 +365,9 @@ h2 {
 @media screen and (max-width: 768px) {
     body {
         max-width: 680px;
+        font-size: .8em;
+        align-items: center;
+        justify-content: center;
     }
     header {
         padding: 2em;
@@ -362,22 +380,24 @@ h2 {
 
     .main {
         flex-wrap: wrap;
-        font-size: .6em;
     }
 
     .imagenEvento {
         height: 12rem;
+        align-items: center;
+        justify-content: center;
     }
 
     .arte {
         flex-grow: 1;
         font-size: .6em;
     }
-
     .bienvenidos {
         flex-grow: 1;
         font-size: .8rem;
         transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+        align-items: center;
+        justify-content: center;
     }
 
     .bienvenidos:hover {
