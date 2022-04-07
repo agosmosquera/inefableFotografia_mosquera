@@ -23,5 +23,6 @@
   },
   "dependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "keywords": []
 }
