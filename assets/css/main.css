@@ -2,28 +2,6 @@
 /* IMPORTS*/
 /* MISCELANEOUS*/
 @import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Inter:wght@300;500;700&display=swap");
-/* Reset */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 1.6rem; }
-
-/* Globales */
-html {
-  font-size: 62.5%; }
-
-ol, ul {
-  list-style-type: none;
-  padding-left: 0; }
-
-a {
-  text-decoration: none;
-  color: brown;
-  display: inline-block; }
-
 .flex-row {
   display: flex; }
 
@@ -58,6 +36,28 @@ a {
     transform: scale(1.2); }
   100% {
     transform: scale(1.1); } }
+
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.6rem; }
+
+/* Globales */
+html {
+  font-size: 62.5%; }
+
+ol, ul {
+  list-style-type: none;
+  padding-left: 0; }
+
+a {
+  text-decoration: none;
+  color: brown;
+  display: inline-block; }
 
 /* PARTIALS*/
 header .navbar {
