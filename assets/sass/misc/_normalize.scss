@@ -1,0 +1,25 @@
+/* Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+}
+/* Globales */
+
+html {
+    font-size: 62.5%;
+}
+
+ol, ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: brown;
+    display: inline-block;
+}

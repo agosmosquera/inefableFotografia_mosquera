@@ -1,0 +1,39 @@
+@keyframes efecto {
+    25% {
+        transform: scale(1.3);
+    }
+
+    50% {
+        transform: scale(1.5);
+        color: blueviolet;
+    }
+
+    75% {
+        transform: scale(1.3);
+        color: black;
+    }
+
+    100% {
+        transform: scale(1);
+        color: blueviolet;
+    }
+}
+
+@keyframes animacion {
+    25% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1.3);
+        color: blueviolet;;
+    }
+
+    75% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}

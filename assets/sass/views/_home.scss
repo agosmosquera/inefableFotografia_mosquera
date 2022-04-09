@@ -1,0 +1,147 @@
+.bodyIndex {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto 1.1fr auto;
+    min-height: 100vh;
+    font-family: var(&font-primary);
+    background-color: var(&principal);
+}
+
+
+.navbar {
+    min-height: 10vh;
+    height: 28vh;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+
+    .navbar .menu {
+        justify-content: space-between;
+    }
+}
+
+
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 60vh;
+    grid-template-rows: 3.5rem 16rem 5rem;
+    grid-template-areas:
+        "bienvenidos img"
+        "arte img"
+        "congela congela";
+    padding: 4rem;
+    grid-column-gap: 0.4rem;
+    grid-row-gap: 1.5rem;
+    justify-items: center;
+
+    .arte {
+        grid-area: arte;
+    }
+
+    .arte::first-letter {
+        color: var(&secondary);
+        font-size: 1.5em;
+    }
+
+    .bienvenidos {
+        grid-area: bienvenidos;
+        color: black;
+        animation-name: efecto;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        animation-duration: 3s;
+        animation-delay: 3s;
+        gap: 2rem;
+    }
+
+    .bienvenidos::after {
+        content: "📸";
+    }
+
+    .img {
+        grid-area: img;
+    }
+
+    .imagenEvento {
+        height: 18rem;
+    }
+
+    .congela {
+        grid-area: congela;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 3s ease-in-out;
+    }
+
+    .congela:hover {
+        transform: scale(1.5);
+    }
+
+    .buttonCongela {
+        padding: 0.3rem;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        flex-wrap: wrap;
+    }
+
+    .imagenEvento {
+        height: 12rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .arte {
+        flex-grow: 1;
+        font-size: .6em;
+    }
+
+    .bienvenidos {
+        flex-grow: 1;
+        font-size: .8rem;
+        transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bienvenidos:hover {
+        color: blueviolet;
+        font-size: 1.6em;
+    }
+
+    main {
+        font-size: 0.6em;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.5rem 18rem 300px 1.5rem 18rem 300px 1.5rem 18rem 300px;
+        grid-template-areas:
+            "nombreUno"
+            "nombreDos"
+            "nombreTres"
+            "descripcionUno"
+            "descripcionDos"
+            "descripcionTres"
+            "fotoUno"
+            "fotoDos"
+            "fotoTres";
+        margin: 2rem;
+        padding: 1rem;
+        grid-row-gap: 2rem;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        flex-wrap: wrap;
+    }
+}

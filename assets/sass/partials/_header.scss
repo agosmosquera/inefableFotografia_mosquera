@@ -1,0 +1,82 @@
+header {
+    .navbar {
+        min-height: 10vh;
+        height: 20vh;
+        width: 90%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        flex-wrap: wrap;
+    }
+
+    .navbar .menu {
+        justify-content: space-between;
+    }
+
+    .menu .menu__item .menu__link {
+        padding: 1rem;
+    }
+
+    .menu>li {
+        position: relative;
+        display: inline-block;
+        border-color: 0.2rem solid var(&tertiary)
+    }
+
+    .subMenu {
+        position: absolute;
+        width: 100%;
+        display: none;
+    }
+
+    .menu .menu__item:hover .subMenu {
+        display: block;
+    }
+
+    .menu .menu__item .menu__link:hover {
+        color: blueviolet;
+        border-color: var(&secondary);
+    }
+
+    .subMenu li a {
+        display: block;
+        padding: 1rem;
+    }
+
+    .subMenu li a:hover {
+        color: blueviolet;
+    }
+
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 60vh;
+    grid-template-rows: 3.5rem 16rem 5rem;
+    grid-template-areas:
+        "bienvenidos img"
+        "arte img"
+        "congela congela";
+    padding: 4rem;
+    grid-column-gap: 0.4rem;
+    grid-row-gap: 1.5rem;
+    justify-items: center;
+} 
+@media screen and (max-width: 768px) {
+    body {
+        max-width: 680px;
+        font-size: .8em;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header {
+        padding: 2em;
+    }
+
+    header .navbar {
+        justify-content: center;
+        flex-direction: column;
+    }
+}
