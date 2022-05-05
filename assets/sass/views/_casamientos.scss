@@ -8,20 +8,7 @@
     background-color: var(&principal);
 }
 
-.main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 60vh;
-    grid-template-rows: 3.5rem 16rem 5rem;
-    grid-template-areas:
-        "bienvenidos img"
-        "arte img"
-        "congela congela";
-    padding: 4rem;
-    grid-column-gap: 0.4rem;
-    grid-row-gap: 1.5rem;
-    justify-items: center;
-}
+
 
 @media screen and (max-width: 768px) {
     .main {

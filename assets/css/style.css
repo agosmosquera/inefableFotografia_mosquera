@@ -11,8 +11,8 @@
 
 } */
 
-Reset
-/* *,
+
+/*Reset *,
 *::before,
 *::after {
     margin: 0;
@@ -466,4 +466,4 @@ form input:focus {
     100% {
         transform: scale(1.1);
     }
-} */ {}
+} */ 

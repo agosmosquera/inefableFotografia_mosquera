@@ -1,13 +1,23 @@
-.bodyIndex {
+/* Variables */
+:root {
+    $principal: #ffe4c4;
+    $secondary: #a52a2a;
+    $tertiary: #f5f5dc;
+    $font-primary: "Inter", sans-serif;
+    $font-secondary: "Bowly One SC", cursive;
+}
+
+
+
+bodyIndex {
     max-width: 1080px;
     margin: 0 auto;
     display: grid;
     grid-template-rows: auto 1.1fr auto;
     min-height: 100vh;
     font-family: var(&font-primary);
-    background-color: var(&principal);
+    background-color: #ffe4c4;
 }
-
 
 .navbar {
     min-height: 10vh;
@@ -22,8 +32,6 @@
         justify-content: space-between;
     }
 }
-
-
 
 .main {
     display: grid;

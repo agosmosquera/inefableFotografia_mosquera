@@ -2,40 +2,61 @@
 /* IMPORTS*/
 /* MISCELANEOUS*/
 @import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Inter:wght@300;500;700&display=swap");
+
+
 .flex-row {
-  display: flex; }
+  display: flex;
+}
 
 .flex-column {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .container {
   max-width: 108rem;
-  margin: 0.625rem auto; }
+  margin: 0.625rem auto;
+}
 
 @keyframes efecto {
   25% {
-    transform: scale(1.3); }
+    transform: scale(1.3);
+  }
+
   50% {
     transform: scale(1.5);
-    color: blueviolet; }
+    color: blueviolet;
+  }
+
   75% {
     transform: scale(1.3);
-    color: black; }
+    color: black;
+  }
+
   100% {
     transform: scale(1);
-    color: blueviolet; } }
+    color: blueviolet;
+  }
+}
 
 @keyframes animacion {
   25% {
-    transform: scale(1.1); }
+    transform: scale(1.1);
+  }
+
   50% {
     transform: scale(1.3);
-    color: blueviolet; }
+    color: blueviolet;
+  }
+
   75% {
-    transform: scale(1.2); }
+    transform: scale(1.2);
+  }
+
   100% {
-    transform: scale(1.1); } }
+    transform: scale(1.1);
+  }
+}
 
 /* Reset */
 *,
@@ -44,20 +65,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+}
 
 /* Globales */
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
-ol, ul {
+ol,
+ul {
   list-style-type: none;
-  padding-left: 0; }
+  padding-left: 0;
+}
 
 a {
   text-decoration: none;
   color: brown;
-  display: inline-block; }
+  display: inline-block;
+}
 
 /* PARTIALS*/
 header .navbar {
@@ -67,66 +93,136 @@ header .navbar {
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+}
 
 header .navbar .menu {
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 
 header .menu .menu__item .menu__link {
-  padding: 1rem; }
+  padding: 1rem;
+}
 
-header .menu > li {
+header .menu>li {
   position: relative;
   display: inline-block;
-  border-color: 0.2rem solid var(header .menu > li tertiary); }
+  border-color: 0.2rem solid var(tertiary);
+}
 
 header .subMenu {
   position: absolute;
   width: 100%;
-  display: none; }
+  display: none;
+}
 
 header .menu .menu__item:hover .subMenu {
-  display: block; }
+  display: block;
+}
 
 header .menu .menu__item .menu__link:hover {
   color: blueviolet;
-  border-color: var(header .menu .menu__item .menu__link:hover secondary); }
+  border-color: var(secondary);
+}
 
 header .subMenu li a {
   display: block;
-  padding: 1rem; }
+  padding: 1rem;
+}
 
 header .subMenu li a:hover {
-  color: blueviolet; }
+  color: blueviolet;
+}
 
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 60vh;
   grid-template-rows: 3.5rem 16rem 5rem;
-  grid-template-areas: "bienvenidos img" "arte img" "congela congela";
+  grid-template-areas: "bienvenidos img"
+    "arte img"
+    "congela congela";
   padding: 4rem;
   grid-column-gap: 0.4rem;
   grid-row-gap: 1.5rem;
-  justify-items: center; }
+  justify-items: center;
+}
+
+.arte {
+  grid-area: arte;
+}
+
+.arte::first-letter {
+  color: var(secondary);
+  font-size: 1.5em;
+}
+
+.bienvenidos {
+grid-area: bienvenidos;
+  color: black;
+  animation-name: efecto;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-delay: 3s;
+  gap: 2rem;
+}
+  .bienvenidos::after {
+    content: "📸";
+  }
+
+  .img {
+    grid-area: img;
+  }
+
+  .imagenEvento {
+    height: 18rem;
+  }
+
+  .congela {
+    grid-area: congela;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 3s ease-in-out;
+  }
+
+  .congela:hover {
+    transform: scale(1.5);
+  }
+
+  .buttonCongela {
+    padding: 0.3rem;
+    border: 1rem;
+  }
+
+  
 
 @media screen and (max-width: 768px) {
   body {
     max-width: 680px;
     font-size: .8em;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    max-height: 50vh;
+  }
+
   header {
-    padding: 2em; }
+    padding: 2em;
+  }
+
   header .navbar {
     justify-content: center;
-    flex-direction: column; } }
+    flex-direction: column;
+  }
+}
 
 .footer {
   min-height: 10vh;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+}
 
 /* VIEWS*/
 .bodyCasamientos {
@@ -135,23 +231,29 @@ header .subMenu li a:hover {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  font-family: var(.bodyCasamientos font-primary);
-  background-color: var(.bodyCasamientos principal); }
+  font-family: var(font-primary);
+  background-color: #ffe4c4;
+}
 
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 60vh;
   grid-template-rows: 3.5rem 16rem 5rem;
-  grid-template-areas: "bienvenidos img" "arte img" "congela congela";
+  grid-template-areas: "bienvenidos img"
+    "arte img"
+    "congela congela";
   padding: 4rem;
   grid-column-gap: 0.4rem;
   grid-row-gap: 1.5rem;
-  justify-items: center; }
+  justify-items: center;
+}
 
 @media screen and (max-width: 768px) {
   .main {
-    flex-wrap: wrap; } }
+    flex-wrap: wrap;
+  }
+}
 
 .bodyContacto {
   max-width: 1080px;
@@ -159,42 +261,58 @@ header .subMenu li a:hover {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  font-family: var(.bodyContacto font-primary);
-  background-color: var(.bodyContacto principal); }
+  font-family: var(font-primary);
+  background-color: #ffe4c4;
+}
 
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 60vh;
   grid-template-rows: 3.5rem 16rem 5rem;
-  grid-template-areas: "bienvenidos img" "arte img" "congela congela";
+  grid-template-areas: "bienvenidos img"
+    "arte img"
+    "congela congela";
   padding: 4rem;
   grid-column-gap: 0.4rem;
   grid-row-gap: 1.5rem;
-  justify-items: center; }
-  .main .contactoFormulario {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    grid-column-gap: 3rem; }
-  .main .contacto {
-    margin: 2rem; }
-  .main .contactoTexto {
-    margin: 2rem;
-    width: 30rem;
-    animation-name: animacion;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 4s;
-    animation-delay: 2s; }
-  .main form input {
-    margin: 0.3rem; }
-  .main form input:focus {
-    outline: 2px solid var(.main form input:focus secondary); }
+  justify-items: center;
+}
+
+.main .contactoFormulario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column-gap: 3rem;
+}
+
+.main .contacto {
+  margin: 2rem;
+}
+
+.main .contactoTexto {
+  margin: 2rem;
+  width: 30rem;
+  animation-name: animacion;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 4s;
+  animation-delay: 2s;
+}
+
+.main form input {
+  margin: 0.3rem;
+}
+
+.main form input:focus {
+  outline: 2px solid var(secondary);
+}
 
 @media screen and (max-width: 768px) {
   .main {
-    flex-wrap: wrap; } }
+    flex-wrap: wrap;
+  }
+}
 
 .bodyCumpleaños {
   max-width: 1080px;
@@ -202,23 +320,29 @@ header .subMenu li a:hover {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  font-family: var(.bodyCumpleaños font-primary);
-  background-color: var(.bodyCumpleaños principal); }
+  font-family: var(font-primary);
+  background-color: #ffe4c4;
+}
 
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 60vh;
   grid-template-rows: 3.5rem 16rem 5rem;
-  grid-template-areas: "bienvenidos img" "arte img" "congela congela";
+  grid-template-areas: "bienvenidos img"
+    "arte img"
+    "congela congela";
   padding: 4rem;
   grid-column-gap: 0.4rem;
   grid-row-gap: 1.5rem;
-  justify-items: center; }
+  justify-items: center;
+}
 
 @media screen and (max-width: 768px) {
   .main {
-    flex-wrap: wrap; } }
+    flex-wrap: wrap;
+  }
+}
 
 .bodyEquipo {
   max-width: 1080px;
@@ -226,61 +350,133 @@ header .subMenu li a:hover {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  font-family: var(.bodyEquipo font-primary);
-  background-color: var(.bodyEquipo principal); }
+  font-family: var(font-primary);
+  background-color: #ffe4c4;
+}
+.nombreUno {
+  grid-area: nombreUno;
+}
+
+.nombreDos {
+  grid-area: nombreDos;
+}
+
+.nombreTres {
+  grid-area: nombreTres;
+}
+
+.descripcionUno {
+  grid-area: descripcionUno;
+}
+
+.descripcionDos {
+  grid-area: descripcionDos;
+}
+
+.descripcionTres {
+  grid-area: descripcionTres;
+}
+
+.fotoUno {
+  grid-area: fotoUno;
+}
+
+.fotoDos {
+  grid-area: fotoDos;
+}
+
+.fotoTres {
+  grid-area: fotoTres;
+}
+
+.nombres {
+  font-style: italic;
+  color: #9f3737;
+}
 
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 60vh;
   grid-template-rows: 3.5rem 16rem 5rem;
-  grid-template-areas: "bienvenidos img" "arte img" "congela congela";
+  grid-template-areas: "bienvenidos img"
+    "arte img"
+    "congela congela";
   padding: 4rem;
   grid-column-gap: 0.4rem;
   grid-row-gap: 1.5rem;
-  justify-items: center; }
-  .main h2 {
-    color: violet;
-    font-size: 1em;
-    display: inline-block;
-    flex-wrap: wrap;
-    margin: 2rem; }
-  .main .equipo {
-    display: grid;
-    grid-template-columns: 1.2fr 1.5fr 1.2fr;
-    grid-template-rows: 1.5rem 18rem 300px;
-    grid-template-areas: "nombreUno nombreDos nombreTres" "descripcionUno descripcionDos descripcionTres" "fotoUno fotoDos fotoTres";
-    margin: 2rem;
-    padding: 1rem;
-    grid-column-gap: 1.5rem;
-    grid-row-gap: 2rem;
-    flex-wrap: wrap;
-    line-height: 1.1; }
-  .main .nombreUno {
-    grid-area: nombreUno; }
-  .main .nombreDos {
-    grid-area: nombreDos; }
-  .main .nombreTres {
-    grid-area: nombreTres; }
-  .main .descripcionUno {
-    grid-area: descripcionUno; }
-  .main .descripcionDos {
-    grid-area: descripcionDos; }
-  .main .descripcionTres {
-    grid-area: descripcionTres; }
-  .main .fotoUno {
-    grid-area: fotoUno; }
-  .main .fotoDos {
-    grid-area: fotoDos; }
-  .main .fotoTres {
-    grid-area: fotoTres; }
-  .main .nombres {
-    font-style: italic;
-    color: #9f3737; }
+  justify-items: center;
+}
+
+.main h2 {
+  color: violet;
+  font-size: 1em;
+  display: inline-block;
+  flex-wrap: wrap;
+  margin: 2rem;
+}
+
+.main .equipo {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1.2fr;
+  grid-template-rows: 1.5rem 18rem 300px;
+  grid-template-areas: "nombreUno nombreDos nombreTres"
+    "descripcionUno descripcionDos descripcionTres"
+    "fotoUno fotoDos fotoTres";
+  margin: 2rem;
+  padding: 1rem;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 2rem;
+  flex-wrap: wrap;
+  line-height: 1.1;
+}
+
+.main .nombreUno {
+  grid-area: nombreUno;
+}
+
+.main .nombreDos {
+  grid-area: nombreDos;
+}
+
+.main .nombreTres {
+  grid-area: nombreTres;
+}
+
+.main .descripcionUno {
+  grid-area: descripcionUno;
+}
+
+.main .descripcionDos {
+  grid-area: descripcionDos;
+}
+
+.main .descripcionTres {
+  grid-area: descripcionTres;
+}
+
+.main .fotoUno {
+  grid-area: fotoUno;
+}
+
+.main .fotoDos {
+  grid-area: fotoDos;
+}
+
+.main .fotoTres {
+  grid-area: fotoTres;
+}
+
+.main .nombres {
+  font-style: italic;
+  color: #9f3737;
+}
 
 @media screen and (max-width: 768px) {
   .main {
-    flex-wrap: wrap; } }
+    flex-wrap: wrap;
+  }
+}
 
 .bodyGaleria {
   max-width: 1080px;
@@ -288,34 +484,47 @@ header .subMenu li a:hover {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  font-family: var(.bodyGaleria font-primary);
-  background-color: var(.bodyGaleria principal); }
+  font-family: var(font-primary);
+  background-color: #ffe4c4;
+}
 
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 60vh;
   grid-template-rows: 3.5rem 16rem 5rem;
-  grid-template-areas: "bienvenidos img" "arte img" "congela congela";
+  grid-template-areas: "bienvenidos img"
+    "arte img"
+    "congela congela";
   padding: 4rem;
   grid-column-gap: 0.4rem;
   grid-row-gap: 1.5rem;
-  justify-items: center; }
-  .main .galeria {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 5rem 20rem 20rem 20rem;
-    grid-template-areas: "h2 invitacion" "lunes martes" "miercoles jueves" "viernes informacion";
-    padding: 1rem;
-    grid-column-gap: 1rem;
-    flex-wrap: wrap; }
-  .main .invitacion {
-    margin-top: 2rem;
-    display: inline-block; }
+  justify-items: center;
+}
+
+.main .galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 5rem 20rem 20rem 20rem;
+  grid-template-areas: "h2 invitacion"
+    "lunes martes"
+    "miercoles jueves"
+    "viernes informacion";
+  padding: 1rem;
+  grid-column-gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.main .invitacion {
+  margin-top: 2rem;
+  display: inline-block;
+}
 
 @media screen and (max-width: 768px) {
   .main {
-    flex-wrap: wrap; } }
+    flex-wrap: wrap;
+  }
+}
 
 .bodyIndex {
   max-width: 1080px;
@@ -323,8 +532,9 @@ header .subMenu li a:hover {
   display: grid;
   grid-template-rows: auto 1.1fr auto;
   min-height: 100vh;
-  font-family: var(.bodyIndex font-primary);
-  background-color: var(.bodyIndex principal); }
+  font-family: var(font-primary);
+  background-color: #ffe4c4;
+}
 
 .navbar {
   min-height: 10vh;
@@ -333,84 +543,130 @@ header .subMenu li a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  flex-wrap: wrap; }
-  .navbar .navbar .menu {
-    justify-content: space-between; }
+  flex-wrap: wrap;
+}
+
+.navbar .navbar .menu {
+  justify-content: space-between;
+}
 
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 60vh;
   grid-template-rows: 3.5rem 16rem 5rem;
-  grid-template-areas: "bienvenidos img" "arte img" "congela congela";
+  grid-template-areas: "bienvenidos img"
+    "arte img"
+    "congela congela";
   padding: 4rem;
   grid-column-gap: 0.4rem;
   grid-row-gap: 1.5rem;
-  justify-items: center; }
-  .main .arte {
-    grid-area: arte; }
-  .main .arte::first-letter {
-    color: var(.main .arte::first-letter secondary);
-    font-size: 1.5em; }
-  .main .bienvenidos {
-    grid-area: bienvenidos;
-    color: black;
-    animation-name: efecto;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in-out;
-    animation-duration: 3s;
-    animation-delay: 3s;
-    gap: 2rem; }
-  .main .bienvenidos::after {
-    content: "📸"; }
-  .main .img {
-    grid-area: img; }
-  .main .imagenEvento {
-    height: 18rem; }
-  .main .congela {
-    grid-area: congela;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 3s ease-in-out; }
-  .main .congela:hover {
-    transform: scale(1.5); }
-  .main .buttonCongela {
-    padding: 0.3rem; }
+  justify-items: center;
+}
+
+.main .arte {
+  grid-area: arte;
+}
+
+.main .arte::first-letter {
+  color: var(secondary);
+  font-size: 1.5em;
+}
+
+.main .bienvenidos {
+  grid-area: bienvenidos;
+  color: black;
+  animation-name: efecto;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-delay: 3s;
+  gap: 2rem;
+}
+
+.main .bienvenidos::after {
+  content: "📸";
+}
+
+.main .img {
+  grid-area: img;
+}
+
+.main .imagenEvento {
+  height: 18rem;
+}
+
+.main .congela {
+  grid-area: congela;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 3s ease-in-out;
+}
+
+.main .congela:hover {
+  transform: scale(1.5);
+}
+
+.main .buttonCongela {
+  padding: 0.3rem;
+}
 
 @media screen and (max-width: 768px) {
   .main {
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+  }
+
   .imagenEvento {
     height: 12rem;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+  }
+
   .arte {
     flex-grow: 1;
-    font-size: .6em; }
+    font-size: .6em;
+  }
+
   .bienvenidos {
     flex-grow: 1;
     font-size: .8rem;
     transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+  }
+
   .bienvenidos:hover {
     color: blueviolet;
-    font-size: 1.6em; }
+    font-size: 1.6em;
+  }
+
   main {
     font-size: 0.6em;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1.5rem 18rem 300px 1.5rem 18rem 300px 1.5rem 18rem 300px;
-    grid-template-areas: "nombreUno" "nombreDos" "nombreTres" "descripcionUno" "descripcionDos" "descripcionTres" "fotoUno" "fotoDos" "fotoTres";
+    grid-template-areas: "nombreUno"
+      "nombreDos"
+      "nombreTres"
+      "descripcionUno"
+      "descripcionDos"
+      "descripcionTres"
+      "fotoUno"
+      "fotoDos"
+      "fotoTres";
     margin: 2rem;
     padding: 1rem;
     grid-row-gap: 2rem;
-    flex-wrap: wrap; } }
+    flex-wrap: wrap;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .main {
-    flex-wrap: wrap; } }
+    flex-wrap: wrap;
+  }
+}
 
 .bodyServicios {
   max-width: 1080px;
@@ -418,20 +674,26 @@ header .subMenu li a:hover {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  font-family: var(.bodyServicios font-primary);
-  background-color: var(.bodyServicios principal); }
+  font-family: var(font-primary);
+  background-color: #ffe4c4;
+}
 
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 60vh;
   grid-template-rows: 3.5rem 16rem 5rem;
-  grid-template-areas: "bienvenidos img" "arte img" "congela congela";
+  grid-template-areas: "bienvenidos img"
+    "arte img"
+    "congela congela";
   padding: 4rem;
   grid-column-gap: 0.4rem;
   grid-row-gap: 1.5rem;
-  justify-items: center; }
+  justify-items: center;
+}
 
 @media screen and (max-width: 768px) {
   .main {
-    flex-wrap: wrap; } }
+    flex-wrap: wrap;
+  }
+}
